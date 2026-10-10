@@ -1,0 +1,22 @@
+{
+  "name": "loan-crm-email-service",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Standalone email microservice for Loan CRM project",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "node --watch src/index.js",
+    "start": "node src/index.js",
+    "test:connection": "node -e \"import('./src/services/smtp.js').then(m => m.verifySmtp()).then(r => console.log(r)).catch(e => console.error(e))\""
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "nodemailer": "^6.9.16"
+  }
+}
